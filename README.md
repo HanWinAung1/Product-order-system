@@ -1,7 +1,51 @@
-Multi-User Order & Inventory System (Mini SaaS)This project is a technical submission for the Jr. Full-Stack Developer role at Nordic Group Limited. It is a simplified Order and Inventory management system built with Laravel 11 and Vue.js 3. 🚀 FeaturesAuthentication: Secure login and logout using Laravel Sanctum. Inventory Management: Real-time product listing with stock level tracking. Order System: A reactive shopping cart that allows users to select products and place orders. Automated Logic: Server-side calculation of total order prices and stock validation. 🛠 Tech StackBackend: Laravel 11 Frontend: Vue.js 3 (Composition API) Database: SQLite (as specified for the local environment) API: Axios for frontend-backend communication 📋 Database SchemaThe system follows the core design requirements from Junior Developer Test_3.pdf: users: Basic authentication data. products: Name, price, and current stock. orders: Tracks the user who placed the order and the final total_price. order_items: Records specific quantities and prices at the time of purchase. ⚙️ Setup Instructions1. Clone the RepositoryBashgit clone https://github.com/HanWinAung1/Product-order-system.git
-cd product-order-system 2. Backend Setup (Laravel)Bashcomposer install
-cp .env.example .env
-Note: Ensure your .env is set to DB_CONNECTION=sqlite.Create an empty file at database/database.sqlite.3. Database Migration & SeedingThis command creates the tables and populates the system with test products and a default user. Bashphp artisan migrate:fresh --seed
-Default Credentials:Email: admin@example.comPassword: password4. Frontend Setup (Vue)Bashnpm install
-npm run dev 5. LaunchStart the Laravel server:Bashphp artisan serve
-Access the application at http://localhost:8000.🧪 API EndpointsPOST /api/login: Authenticate user and return token. GET /api/products: Retrieve all available products. POST /api/orders: Submit a new order with stock validation and price calculation.
+Multi-User Order & Inventory System (Mini SaaS)
+This project is a technical submission for the Jr. Full-Stack Developer role at Nordic Group Limited. It is a simplified Order and Inventory management system built with Laravel 11 and Vue.js 3. 
+
+🚀 FeaturesAuthentication: Secure login and logout using Laravel Sanctum.  
+
+Inventory Management: Real-time product listing with stock level tracking.  
+Order System: A reactive shopping cart that allows users to select products and place orders. 
+Automated Logic: Server-side calculation of total order prices and stock validation.  
+
+🛠 Tech StackBackend: Laravel 11  Frontend: Vue.js 3 (Composition API) 
+Database: SQLite (as specified for the local environment)  
+API: Axios for frontend-backend communication  
+
+📋 Database Schema
+The system follows the core design requirements from Junior Developer Test_3.pdf:  
+users: Basic authentication data.  
+products: Name, price, and current stock. 
+orders: Tracks the user who placed the order and the final total_price.  
+order_items: Records specific quantities and prices at the time of purchase.  
+
+⚙️ Setup Instructions
+
+1. Clone the Repository
+    git clone https://github.com/HanWinAung1/Product-order-system.git
+    cd product-order-system
+
+2. Backend Setup (Laravel)
+    composer install
+    cp .env.example .env
+Note: Ensure your .env is set to DB_CONNECTION=sqlite.
+Create an empty file at database/database.sqlite.
+
+3. Database Migration & Seeding
+This command creates the tables and populates the system with test products and a default user.
+    artisan migrate:fresh --seed
+Default Credentials:
+Email: admin@example.com
+Password: password
+
+4. Frontend Setup (Vue)
+    npm install
+    npm run dev
+5. Launch
+Start the Laravel server:
+    artisan serve
+Access the application at http://localhost:8000.
+
+🧪 API Endpoints
+POST /api/login: Authenticate user and return token.
+GET /api/products: Retrieve all available products. 
+POST /api/orders: Submit a new order with stock validation and price calculation.  
