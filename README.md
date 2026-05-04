@@ -1,58 +1,7 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
-```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Multi-User Order & Inventory System (Mini SaaS)This project is a technical submission for the Jr. Full-Stack Developer role at Nordic Group Limited. It is a simplified Order and Inventory management system built with Laravel 11 and Vue.js 3. 🚀 FeaturesAuthentication: Secure login and logout using Laravel Sanctum. Inventory Management: Real-time product listing with stock level tracking. Order System: A reactive shopping cart that allows users to select products and place orders. Automated Logic: Server-side calculation of total order prices and stock validation. 🛠 Tech StackBackend: Laravel 11 Frontend: Vue.js 3 (Composition API) Database: SQLite (as specified for the local environment) API: Axios for frontend-backend communication 📋 Database SchemaThe system follows the core design requirements from Junior Developer Test_3.pdf: users: Basic authentication data. products: Name, price, and current stock. orders: Tracks the user who placed the order and the final total_price. order_items: Records specific quantities and prices at the time of purchase. ⚙️ Setup Instructions1. Clone the RepositoryBashgit clone https://github.com/HanWinAung1/Product-order-system.git
+cd product-order-system 2. Backend Setup (Laravel)Bashcomposer install
+cp .env.example .env
+Note: Ensure your .env is set to DB_CONNECTION=sqlite.Create an empty file at database/database.sqlite.3. Database Migration & SeedingThis command creates the tables and populates the system with test products and a default user. Bashphp artisan migrate:fresh --seed
+Default Credentials:Email: admin@example.comPassword: password4. Frontend Setup (Vue)Bashnpm install
+npm run dev 5. LaunchStart the Laravel server:Bashphp artisan serve
+Access the application at http://localhost:8000.🧪 API EndpointsPOST /api/login: Authenticate user and return token. GET /api/products: Retrieve all available products. POST /api/orders: Submit a new order with stock validation and price calculation.
