@@ -1,6 +1,7 @@
 Multi-User Order & Inventory System (Mini SaaS)
 This project is a technical submission for the Jr. Full-Stack Developer role at Nordic Group Limited. It is a simplified Order and Inventory management system built with Laravel 11 and Vue.js 3. 
 
+Demo Video link - https://youtu.be/FFCAdiYQ3jk
 🚀 FeaturesAuthentication: Secure login and logout using Laravel Sanctum.  
 
 Inventory Management: Real-time product listing with stock level tracking.  
